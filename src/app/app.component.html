@@ -1,16 +1,5 @@
 <h1>Liste des Pokémons</h1>
 
-<input
-  #input
-  (keyup.enter)="selectPokemon(input.value)"
-  type="number"
-
-/>
-
-<p *ngIf="pokemonSelected">
-  Vous avez sélectionné {{ pokemonSelected.name }}
-</p>
-
 <div class="container">
   <div class="row">
     <ul
@@ -29,8 +18,10 @@
           </div>
           <div class="card-info">
             <h2>{{pokemon.name}}</h2>
-            <p>{{pokemon.created}}</p>
-            <p class="btn btn-outline-primary">{{pokemon.types}}</p>
+            <p>{{pokemon.created | date:"dd/mm/yyyy"}}</p>
+            <span
+              class="{{type | pokemonTypeColor}} mr-2 mb-3 p-3"
+              *ngFor="let type of pokemon.types">{{type}}</span>
           </div>
         </div>
       </li>

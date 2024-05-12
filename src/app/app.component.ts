@@ -4,6 +4,7 @@ import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
 import { CommonModule } from '@angular/common';
 import { BorderCardDirective } from './border-card.directive';
+import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 
 
 
@@ -13,7 +14,8 @@ import { BorderCardDirective } from './border-card.directive';
   standalone: true,
   imports: [
     CommonModule,
-    BorderCardDirective
+    BorderCardDirective,
+    PokemonTypeColorPipe,
   ],
 })
 export class AppComponent implements OnInit {
