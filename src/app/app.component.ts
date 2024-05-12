@@ -3,6 +3,7 @@ import { table } from 'node:console';
 import { POKEMONS } from './mock-pokemon-list';
 import { Pokemon } from './pokemon';
 import { CommonModule } from '@angular/common';
+import { BorderCardDirective } from './border-card.directive';
 
 
 
@@ -11,7 +12,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: `app.component.html`,
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
+    BorderCardDirective
   ],
 })
 export class AppComponent implements OnInit {
