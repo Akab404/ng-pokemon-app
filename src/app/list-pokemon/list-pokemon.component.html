@@ -1,1 +1,28 @@
-<p>list-pokemon works!</p>
+<div class="row">
+    <ul
+      class=" grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 gap-4"
+      style="gap:10px;"
+    >
+      <li
+        *ngFor="let pokemon of pokemonList"
+        class="rounded"
+        style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;list-style: none;"
+        pkmBorderCard
+      >
+        <div class="card-pokemon p-4">
+          <div class="card-img">
+            <img src="{{pokemon.picture}}" alt="{{pokemon.name}}">
+          </div>
+          <div class="card-info">
+            <h2 class="text-2xl font-bold  d-inline-block">{{pokemon.name}}</h2>
+            <p>{{pokemon.created | date:"dd/mm/yyyy"}}</p>
+            <div class="card-info-tags mt-4">
+              <span
+                class="{{type | pokemonTypeColor}} mr-2  px-2 py-1 rounded text-white"
+                *ngFor="let type of pokemon.types">{{type}}</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
