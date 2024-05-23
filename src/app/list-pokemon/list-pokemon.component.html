@@ -1,6 +1,6 @@
 <div class="row">
     <ul
-      class=" grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 gap-4"
+      class="grid md:grid-cols-3 lg:grid-cols-4 sm:grid-cols-2 gap-4"
       style="gap:10px;"
     >
       <li
@@ -9,7 +9,7 @@
         style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;list-style: none;"
         pkmBorderCard
       >
-        <div class="card-pokemon p-4">
+        <div (click)="goToPokemon(pokemon)" class="card-pokemon p-4">
           <div class="card-img">
             <img src="{{pokemon.picture}}" alt="{{pokemon.name}}">
           </div>

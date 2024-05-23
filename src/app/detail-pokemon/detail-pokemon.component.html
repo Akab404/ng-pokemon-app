@@ -1,6 +1,6 @@
 <div *ngIf="pokemon" class="row">
-<div class="col s12 m8 offset-m2">
-<h2 class="header center">{{ pokemon.name }}</h2>
+<div class="col-sm-12 col-md-8">
+<h2 class="text-2xl font-bold text-center">{{ pokemon.name }}</h2>
 <div class="card horizontal hoverable">
   <div class="card-image">
     <img [src]="pokemon.picture">
@@ -24,7 +24,7 @@
           <tr>
             <td>Types</td>
             <td>
-              <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}">{{ type }}</span>
+              <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }} mr-2  px-2 py-1 rounded text-white">{{ type }}</span>
             </td>
           </tr>
           <tr>
@@ -34,9 +34,13 @@
         </tbody>
       </table>
     </div>
-    <div class="card-action">
-      <a >Retour</a>
-    </div>
+    <a (click)="goToPokemonsList()">
+      <div class="w-32 mt-5">
+        <div class="py-2 px-5 bg-violet-500 text-white text-center font-semibold rounded-full shadow-md hover:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-400 focus:ring-opacity-75">
+          Retour
+        </div>
+      </div>
+    </a>
   </div>
 </div>
 </div>
